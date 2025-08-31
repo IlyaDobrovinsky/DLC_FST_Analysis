@@ -1,16 +1,14 @@
 # DLC_FST_Analysis
 
-This repository contains Python scripts for analyzing rodent behavior during Forced Swim Test (FST) using DeepLabCut (DLC). The analysis is conducted using custom Python scripts designed to process DLC-generated CSV files and human assessment data.
+This repository contains a unified Python script for analyzing rodent behavior during the Forced Swim Test (FST) using DeepLabCut output and calibration against human raters.
 
-## Repository Structure
-
-- **`calibration.py`**: Script to fine-tune the "sense" threshold, which determines whether a rodent is classified as 'moving' or 'not moving' based on the distance between body part coordinates in consecutive frames. The optimized `sense` value is obtained by maximizing the correlation between automated analysis and manual human evaluations using different optimization methods.
-- **`analyzer.py`**: Script that uses the optimized `sense` value from `calibration.py` to analyze DLC output data. It reads the DLC CSV files, applies the threshold to classify movements, and outputs movement metrics into a CSV file.
-- **`requirements.txt`**: Contains the Python libraries required to run the scripts.
+## Features
+- **Calibration**: Optimizes the "sense" threshold by maximizing correlation between automated classification and human ratings.
+- **Analysis**: Applies the optimized threshold to classify movements as "moving" or "not moving" across all DLC CSV files.
+- **Output**: Produces a CSV file with movement metrics for each subject.
 
 ## Installation
-
-To run the scripts, you need to have Python installed along with the required libraries. You can install the necessary dependencies using `pip`:
+Clone the repository and install dependencies:
 
 ```bash
 pip install -r requirements.txt
